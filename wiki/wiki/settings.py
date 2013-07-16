@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Asia/Kolkata'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -83,7 +83,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'ny31x(@3xt74!b62qnw0=9immfd=_dom5l27f9f2c)(liuf#%$'
+SECRET_KEY = 'f_$#=2jb9(=mju5)s56bnen(-9!lp*1v&q7%4o*-=p-hy4&(bv'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -108,6 +108,8 @@ ROOT_URLCONF = 'wiki.urls'
 WSGI_APPLICATION = 'wiki.wsgi.application'
 
 TEMPLATE_DIRS = (
+    #"/home/abhisar/wiki/templates"
+    "/home/abhisar/workspace/new_wiki/wiki/wiki/templates"
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -121,9 +123,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    'django.contrib.admin',
+    # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'articles'
 )
 
 # A sample logging configuration. The only tangible logging
