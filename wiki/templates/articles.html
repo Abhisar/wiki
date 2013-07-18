@@ -11,5 +11,16 @@
   <td><a href="/wiki/{{article.title}}/">{{ article.title }}</a></td>
 </tr>
 {% endfor %}</table>
+{%if status == True%}
+   You are logged in!! 
+   <p> Click <a href="/accounts/logout/">here</a> to logout!! </p>
+{%endif%}
+
+
+{%if status == False%}
+   <p> Click <a href="/accounts/login/">here</a> to login!! </p>
+{%endif%}
+
+<p> Click <a href="/accounts/register/">here</a> to register!! </p>
 </body>
 </html>

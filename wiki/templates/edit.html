@@ -6,6 +6,10 @@
       <h1>Editing {{page_name}}</h1>
       <form method="post" action="/wiki/{{page_name}}/save/"> {% csrf_token %}
             <textarea name="content" rows="20" cols="60"> {{content}}</textarea>
-      <input type="submit" value="Save Page"/>
+            {%if owner == loggedin_user%}
+                <input type="checkbox" name="check" value="True">Private page<br>
+            {%endif%}
+      <input type="submit" value="Save Page"/><br/>
+      <p> Click <a href="/accounts/logout/">here</a> to logout </p>
 </body>
 </html>
