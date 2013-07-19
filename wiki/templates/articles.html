@@ -23,4 +23,11 @@
 
 <p> Click <a href="/accounts/register/">here</a> to register!! </p>
 </body>
+
+ <form method="post" action="/search/"> {% csrf_token %}
+ Enter page name to search: <input type="text" name="page_name"><br>
+ <input type="submit" value="search"/><br/>
+ </form>
+
+
 </html>

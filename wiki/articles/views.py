@@ -10,6 +10,9 @@ from django.shortcuts import render_to_response
 from django.template.loader import get_template
 from django.http import HttpResponseRedirect
 
+def hello(request):
+    return render_to_response("hello.html")
+
 def view_page(request,page_name):
     try:
            page=Article.objects.get(pk=page_name)
@@ -56,6 +59,12 @@ def all_articles(request):
     else:
        return render_to_response('articles.html',{'articles':Article.objects.all().filter(flag=False),'status':status})
 
+def search(request):
+    context={}
+    context.update(csrf(request))
+    searchpage=request.POST.get("page_name")
+    return HttpResponseRedirect("/wiki/"+searchpage+'/')
+ 
 
                     
                    

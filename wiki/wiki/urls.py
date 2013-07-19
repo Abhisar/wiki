@@ -5,7 +5,7 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-   
+    url(r'^search/$','articles.views.search'),
     url(r'^wiki/$','articles.views.all_articles'),
     url(r'^wiki/(?P<page_name>[^/]+)/$','articles.views.view_page'),
     url(r'^wiki/(?P<page_name>[^/]+)/edit/$','articles.views.edit_page'),

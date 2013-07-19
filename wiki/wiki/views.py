@@ -5,6 +5,7 @@ from django.contrib import auth
 from django.core.context_processors import csrf
 
 
+
 def login(request):
     """This takes the user credentials from the html page """
     context={}
@@ -20,7 +21,7 @@ def auth_view(request):
     
     if user is not None:
        auth.login(request,user)
-       return HttpResponseRedirect('/accounts/loggedin')
+       return HttpResponseRedirect('/wiki')
     else:
        return HttpResponseRedirect('/accounts/invalid') 
 
@@ -35,7 +36,7 @@ def invalid_login(request):
 def logout(request):
     """view to handle logout"""
     auth.logout(request)
-    return render_to_response('logout.html')
+    return HttpResponseRedirect('/wiki')
 
 def register_user(request):
     """view to handle user registration for the site"""
@@ -46,9 +47,7 @@ def register_user(request):
        return HttpResponseRedirect('/accounts/register_success')
     args= {}
     args.update(csrf(request))
-    
     args['form']=UserCreationForm()
-    
     return render_to_response('register.html', args) 
 
 def register_success(request):

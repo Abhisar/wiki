@@ -102,6 +102,7 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+
 ROOT_URLCONF = 'wiki.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
@@ -126,7 +127,9 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'articles'
+    'articles',
+    'django_markup',
+    'social_auth'
 )
 
 # A sample logging configuration. The only tangible logging

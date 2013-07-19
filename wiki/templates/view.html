@@ -4,7 +4,10 @@
 </head>
 <body>
   <h1>{{page_name}}</h1>
-  {{content}}
+ {% load markup_tags %}
+       {% filter apply_markup:"creole" %}
+       {{content}}
+{% endfilter %}
   <hr/>
   <a href="/wiki/{{page_name}}/edit/"> Edit this page??? </a>
   
